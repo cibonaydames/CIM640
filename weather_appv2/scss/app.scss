@@ -1,0 +1,68 @@
+@import "settings";
+@import "foundation";
+@import url("//fonts.googleapis.com/css?family=Damion");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+            
+
+// larger screen styles
+
+@media only screen and (min-width: 25em) {
+
+body {
+  background-color: #FFFFFF;
+}
+    
+.top-bar .name h1 {
+  font-size: 2rem;
+}  
+    
+p5{
+    color: #FFFFFF;
+  }    
+    
+p2{
+    font-size: 3rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    color: #EFEFEF;
+    }   
+    
+ p3{
+    font-size: 7rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    color: #EFEFEF;
+    } 
+ 
+p4{
+    font-size: 1.5rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    color: #EFEFEF;
+    } 
+
+.panel.callout {
+  border-radius: 10px;
+  background-color: rgba(6, 71, 153, 0.8);
+  text-align: center;
+  margin: 5%;
+  padding-bottom: 75px;
+  border-width: 0px;
+}
+
+.wi {
+    font-size: 200px;
+    color: #FFFFFF;
+    }
+    
+/*    .wi wi-cloud {
+    position: absolute;
+    padding-bottom: 400px;
+    }   */
+    
+// some mobile resets
+    
+
+
+
+}

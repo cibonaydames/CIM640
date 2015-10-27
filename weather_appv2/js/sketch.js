@@ -1,15 +1,16 @@
 var units = "&units=imperial";
-var zipsearch = $('zipsearch').val();
+var zipsearch = $('#zipsearch').val();
 var mode = "location";
 var Weather;
 
-
-  $("#runsearch").click(function(){
+$('#runsearch').click(function(){
   zipsearch = $('#zipsearch').val();  
   mode = "zip";
-  console.log("clicked "+ zipsearch)  
+  console.log("clicked" + zipsearch)  
   DecideMode();
-  });
+
+});
+
 
 var Geo={};
   if (navigator.geolocation) {
@@ -24,16 +25,15 @@ var Geo={};
 
   }
 
+
 function error() {
   alert("Hmm, We couldn't find you!");
   Geo.lat = 40;
   Geo.lon = 20;
-  // mode = "location";  
-  mode = "zip";
+  //mode = "location";  
+  // mode = "zip";
 
   }
-
-
 
 
 function success(position) {
@@ -48,13 +48,12 @@ function success(position) {
     }*/
 
 
-
 function setup() {  
 
-  $("#runsearch").click(function(){
+  $('#runsearch').click(function(){
   zipsearch = $('#zipsearch').val();  
   mode = "zip";
-  console.log("clicked "+ zipsearch)  
+  console.log("clicked" + zipsearch)  
   DecideMode();
 
 });
@@ -79,15 +78,18 @@ function DecideMode() {
   console.log("going to run DecideMode");
 
 var key = "29dff24ee000600798e8e0e5c83167a0";
-  if (mode == "location") {
+  
+
+  if (mode == "zip") {
+    Weather = "http://api.openweathermap.org/data/2.5/weather?zip=" + zipsearch + "&appid=" + key + "&units=imperial";
+    console.log("mode zip")  ;
+  }
+
+  else if (mode == "location") {
     Weather = "http://api.openweathermap.org/data/2.5/weather?lat=" + Geo.lat + "&lon=" + Geo.lon + "&appid=" + key + "&units=imperial";
     console.log("mode location")  ;
 }
 
-else if (mode == "zip") {
-        Weather = "http://api.openweathermap.org/data/2.5/weather?zip=" + zipsearch + "&appid=" + key + "&units=imperial";
- console.log("mode zip")  ;
-  }
 
 loadJSON(Weather, gotWeather);
 
